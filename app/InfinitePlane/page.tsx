@@ -1,19 +1,26 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 export default function InfinitePlane() {
   const mountRef = useRef<HTMLDivElement | null>(null);
+  const [SpeedPlane, setSpeedPlane] = useState(0.05);
+
+  // Use a ref to store the current speed
+  const speedRef = useRef(SpeedPlane);
+
+  // Update the ref whenever SpeedPlane changes
+  useEffect(() => {
+    speedRef.current = SpeedPlane;
+  }, [SpeedPlane]);
 
   useEffect(() => {
     if (!mountRef.current) return;
 
     // Scene Setup
     const scene = new THREE.Scene();
-
-    // Add Fog to the scene (near and far parameters control the density of the fog)
-    scene.fog = new THREE.Fog(0xcccccc, 10, 50);
+    scene.fog = new THREE.Fog(0x1c1c1c, 10, 50);
 
     // Camera Setup
     const camera = new THREE.PerspectiveCamera(
@@ -22,19 +29,19 @@ export default function InfinitePlane() {
       0.1,
       100
     );
-    camera.position.set(0, 5, 10); // Camera positioned above the plane
+    camera.position.set(0, 5, 10);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
     // Plane Geometry & Material (gray base color)
-    const planeGeo = new THREE.PlaneGeometry(100, 100, 10, 10); // Large plane
-    const planeMat = new THREE.MeshStandardMaterial({ color: 0x808080 }); // Gray base
+    const planeGeo = new THREE.PlaneGeometry(150, 100, 10, 10);
+    const planeMat = new THREE.MeshStandardMaterial({ color: 0x808080 });
     const plane = new THREE.Mesh(planeGeo, planeMat);
-    plane.rotation.x = -Math.PI / 2; // Rotate to horizontal
+    plane.rotation.x = -Math.PI / 2;
     scene.add(plane);
 
     // Add Grid Helper (to draw black lines)
-    const gridHelper = new THREE.GridHelper(100, 20, 0x000000, 0x000000); // Black lines
-    // Align grid with the plane
+    const gridHelper = new THREE.GridHelper(100, 20, 0x000000, 0x000000);
+    gridHelper.position.y += 2;
     scene.add(gridHelper);
 
     // Light
@@ -48,14 +55,15 @@ export default function InfinitePlane() {
     // Renderer Setup
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(scene.fog.color); // Match background to fog color
+    renderer.setClearColor(scene.fog.color);
     mountRef.current.appendChild(renderer.domElement);
 
     // Move Plane Toward Camera (infinite plane effect)
     const animate = () => {
       requestAnimationFrame(animate);
 
-      const speed = 0.05; // Speed of movement
+      // Use the latest speed from the ref
+      const speed = speedRef.current;
 
       // Move the plane and grid along the z-axis smoothly
       const position = (plane.position.z + speed) % 10;
@@ -83,5 +91,21 @@ export default function InfinitePlane() {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full overflow-x-hidden" />;
+  return (
+    <div ref={mountRef} className="w-full h-full overflow-x-hidden relative">
+      <form>
+        <input
+          className="absolute top-5 left-5"
+          id="speedRange"
+          type="range"
+          min={0}
+          max={1}
+          step={0.01}
+          value={SpeedPlane}
+          onChange={(e) => setSpeedPlane(e.target.valueAsNumber)}
+        />
+        <button className="absolute top-5 left-40">reset slider</button>
+      </form>
+    </div>
+  );
 }

@@ -2,6 +2,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Downloaded libraries:
+
+npm install three
+npm install gsap
+npm install three-stdlib
+
 First, run the development server:
 
 ```bash

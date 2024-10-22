@@ -48,5 +48,5 @@ export default function Week1() {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full" />;
+  return <div ref={mountRef} className="w-full h-full  overflow-x-hidden " />;
 }

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-export default function page() {
+export default function Week2() {
   const mountRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -80,5 +80,5 @@ export default function page() {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full overflow-hidden" />;
+  return <div ref={mountRef} className="w-full h-full  overflow-x-hidden " />;
 }

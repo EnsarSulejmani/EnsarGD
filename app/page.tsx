@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Week1 from "./Week1/page";
 
 export default function Home() {
   return (
@@ -46,6 +47,7 @@ export default function Home() {
           </Link>
         </li>
       </ul>
+      <Week1 />
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three-stdlib";
+import { OutlinePass } from "three-stdlib";
 
 export default function Homework1() {
   const mountRef = useRef<HTMLDivElement | null>(null);
@@ -20,8 +21,10 @@ export default function Homework1() {
       0.1,
       1000
     );
-    camera.position.set(0, -4, 4);
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    // camera.position.set(0, -4, 4);
+    // camera.lookAt(new THREE.Vector3(0, 0, 0));
+    camera.position.set(0, 10, 0);
+    camera.lookAt(0, 0, 0);
 
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -52,25 +55,27 @@ export default function Homework1() {
 
     /* Positioning */
 
-    //IT support
-    ITsupport.position.set(-3, 2, 0.5);
-    ITsupport.rotateZ(10);
+    // IT Support
+    ITsupport.position.set(3, 0.5, 2); // Mirrored X
+    ITsupport.rotation.z = 0.5; // Adjust rotation for mirroring
 
-    //Road
-    road2.rotateZ(0.5);
-    round.position.set(0, 0, 0.001);
-    road1.position.set(0, -2.5, 0.1);
-    road2.position.set(-1.5, 2.5, 0.1);
+    // Roundabout (center)
+    round.position.set(0, 0.001, 0);
 
-    //FSC
-    FofCS.position.set(2, 2, 1);
-    FofCS.rotateZ(1.6);
+    // Roads
+    road1.position.set(0, 0.1, -2.5);
+    road2.position.set(1.5, 0.1, 2.5); // Mirrored X
+    road2.rotation.z = 0.5; // Adjust rotation for mirroring
 
-    //815
-    building815.position.set(1.5, -2, 0.5);
+    // Faculty of Computer Science
+    FofCS.position.set(-2, 1, 2); // Mirrored X
+    FofCS.rotation.z = -1.6; // Adjust rotation for mirroring
 
-    //815
-    building816.position.set(1.5, -4.5, 0.5);
+    // Building 815
+    building815.position.set(-1.5, 0.5, -2); // Mirrored X
+
+    // Building 816
+    building816.position.set(-1.5, 0.5, -4.5); // Mirrored X
 
     //render
     scene.add(
@@ -84,12 +89,26 @@ export default function Homework1() {
       ITsupport
     );
 
+    //Rotations
+    ITsupport.rotation.x = -Math.PI / 2;
+    building815.rotation.x = -Math.PI / 2;
+    building816.rotation.x = -Math.PI / 2;
+    FofCS.rotation.x = -Math.PI / 2;
+    road1.rotation.x = -Math.PI / 2;
+    road2.rotation.x = -Math.PI / 2;
+    round.rotation.x = -Math.PI / 2;
+    terrain.rotation.x = -Math.PI / 2;
+
     // Orbitacl Controlls
     const controls = new OrbitControls(camera, renderer.domElement);
 
     // Animation Loop
     const animate = () => {
+      // Restrict Orbit Controls to top-down
+      controls.maxPolarAngle = Math.PI / 2; // Limits camera to the top
+      controls.minPolarAngle = Math.PI / 4; // Gives a slightly angled top-down view
       controls.update();
+
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     };

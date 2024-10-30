@@ -104,7 +104,9 @@ export default function InfinitePlane() {
           value={SpeedPlane}
           onChange={(e) => setSpeedPlane(e.target.valueAsNumber)}
         />
-        <button className="absolute top-5 left-40">reset slider</button>
+        <button className="absolute top-[0.7rem] left-40 text-white text-[0.8rem] rounded-full bg-none border border-white  px-4 py-2">
+          reset slider
+        </button>
       </form>
     </div>
   );

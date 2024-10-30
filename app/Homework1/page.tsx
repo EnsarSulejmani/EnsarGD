@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three-stdlib";
-import { OutlinePass } from "three-stdlib";
 
 export default function Homework1() {
   const mountRef = useRef<HTMLDivElement | null>(null);

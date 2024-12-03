@@ -48,6 +48,46 @@ export default function Home() {
         </li>
         <li className="hover:scale-110 ease-in-out duration-300">
           <Link
+            href="/Week4"
+            className="bg-[#656765] border-white border px-4 py-2 rounded-md hover:bg-white hover:text-black hover:scale-150"
+          >
+            Week 4
+          </Link>
+        </li>
+        <li className="hover:scale-110 ease-in-out duration-300">
+          <Link
+            href="/Week5"
+            className="bg-[#656765] border-white border px-4 py-2 rounded-md hover:bg-white hover:text-black hover:scale-150"
+          >
+            Week 5
+          </Link>
+        </li>
+        <li className="hover:scale-110 ease-in-out duration-300">
+          <Link
+            href="/Week6"
+            className="bg-[#656765] border-white border px-4 py-2 rounded-md hover:bg-white hover:text-black hover:scale-150"
+          >
+            Week 6
+          </Link>
+        </li>
+        <li className="hover:scale-110 ease-in-out duration-300">
+          <Link
+            href="/Week7"
+            className="bg-[#656765] border-white border px-4 py-2 rounded-md hover:bg-white hover:text-black hover:scale-150"
+          >
+            Week 7
+          </Link>
+        </li>
+        <li className="hover:scale-110 ease-in-out duration-300">
+          <Link
+            href="/Week8"
+            className="bg-[#656765] border-white border px-4 py-2 rounded-md hover:bg-white hover:text-black hover:scale-150"
+          >
+            Week 8
+          </Link>
+        </li>
+        <li className="hover:scale-110 ease-in-out duration-300">
+          <Link
             href="/InfinitePlane"
             className="bg-[#656765] border-white border px-4 py-2 rounded-md hover:bg-white hover:text-black hover:scale-150"
           >

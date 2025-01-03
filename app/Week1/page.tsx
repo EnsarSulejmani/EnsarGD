@@ -25,6 +25,7 @@ export default function Week1() {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
+    renderer.setClearColor(new THREE.Color("rgb(20, 20, 20)"));
 
     // Cube setup
     const geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -48,5 +49,5 @@ export default function Week1() {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full  overflow-x-hidden " />;
+  return <div ref={mountRef} className="w-full h-full  overflow-x-hidden" />;
 }

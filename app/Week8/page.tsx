@@ -112,6 +112,7 @@ const Week8 = () => {
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(new THREE.Color("rgb(20, 20, 20)"));
 
     if (mountRef.current) {
       mountRef.current.appendChild(renderer.domElement);

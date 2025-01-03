@@ -64,6 +64,8 @@ export default function Week2() {
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(new THREE.Color("rgb(20, 20, 20)"));
+
     mountRef.current.appendChild(renderer.domElement);
 
     // Animation Loop

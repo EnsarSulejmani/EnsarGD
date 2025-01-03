@@ -80,6 +80,7 @@ const Week6: React.FC = () => {
     // Renderer setup
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(new THREE.Color("rgb(20, 20, 20)"));
 
     // Camera setup
     const sizes = {

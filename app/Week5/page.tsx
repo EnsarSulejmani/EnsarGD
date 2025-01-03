@@ -41,6 +41,7 @@ const Week5: React.FC = () => {
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(new THREE.Color("rgb(20, 20, 20)"));
 
     // Camera setup
     const camera = new THREE.PerspectiveCamera(
@@ -88,7 +89,7 @@ const Week5: React.FC = () => {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-screen bg-black"></div>;
+  return <div ref={mountRef} className="w-full h-screen bg-[#1c1c1c]"></div>;
 };
 
 export default Week5;

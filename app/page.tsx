@@ -13,7 +13,7 @@ export default function Home() {
           Graphics"
         </p>
       </div>
-      <ul className="flex w-full items-center justify-evenly mx-auto flex-wrap my-8 sticky top-4 max-w-[960px]">
+      <ul className="flex w-full items-center justify-evenly mx-auto flex-wrap my-8 sticky top-4 max-w-[960px] gap-4">
         <li className="hover:scale-110 ease-in-out duration-300">
           <Link
             href="/"

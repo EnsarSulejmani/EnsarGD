@@ -102,8 +102,15 @@ export default function Home() {
             Homework 1
           </Link>
         </li>
+        <li className="hover:scale-110 ease-in-out duration-300">
+          <Link
+            href="/Homework2"
+            className="bg-[#656765] border-white border px-4 py-2 rounded-md hover:bg-white hover:text-black hover:scale-150"
+          >
+            Homework 2
+          </Link>
+        </li>
       </ul>
-      {/* <Week1 /> */}
     </div>
   );
 }

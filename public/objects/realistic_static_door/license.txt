@@ -1,0 +1,11 @@
+Model Information:
+* title:	Realistic Static Door
+* source:	https://sketchfab.com/3d-models/realistic-static-door-70001eef94d04ab1a311c90fa9ac3bfc
+* author:	KimbellWhatley (https://sketchfab.com/KimbellWhatley)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Realistic Static Door" (https://sketchfab.com/3d-models/realistic-static-door-70001eef94d04ab1a311c90fa9ac3bfc) by KimbellWhatley (https://sketchfab.com/KimbellWhatley) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

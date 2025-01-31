@@ -351,5 +351,11 @@ export default function Homework2() {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-full" />;
+  return (
+    <div ref={mountRef} className="w-full h-full relative">
+      <div className="absolute text-blue-950 text-2xl top-0 right-0 animate-pulse">
+        Left click to move camera - W A S D to move!
+      </div>
+    </div>
+  );
 }

@@ -9,8 +9,8 @@ export default function Home() {
           Computer Graphics with threejs
         </h1>
         <p className="text-lg text-center mx-auto">
-          This is the website for all threeJS projects for the course "Computer
-          Graphics"
+          This is the website for all threeJS projects for the course Computer
+          Graphics
         </p>
       </div>
       <ul className="flex w-full items-center justify-evenly mx-auto flex-wrap my-8 sticky top-4 max-w-[960px] gap-4">
